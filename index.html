@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!----------------- Add css Link ----------------->
+    <link rel="stylesheet" href="style.css" />
+    <!----------------- cdn Font Awesome ----------------->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!----------------- cdn Font Awesome end ----------------->
+
+    <title>Slider</title>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <span id="left" class="icon">
+          <i class="fa-solid fa-circle-chevron-left"></i
+        ></span>
+
+        <div class="gallery" id="gallery">
+          <div>
+            <span
+              ><img src="https://i.ibb.co.com/YXLwTr3/img-14.jpg" alt=""
+            /></span>
+            <span
+              ><img src="https://i.ibb.co.com/1syhTCD/img-10.jpg" alt=""
+            /></span>
+            <span
+              ><img src="https://i.ibb.co.com/KwYFJnw/img-8.jpg" alt=""
+            /></span>
+          </div>
+          <div>
+            <span
+              ><img src="https://i.ibb.co.com/SVbVhR4/img-11.jpg    " alt=""
+            /></span>
+            <span
+              ><img src="https://i.ibb.co.com/GV1FP8q/img-9.jpg" alt=""
+            /></span>
+            <span
+              ><img src="https://i.ibb.co.com/6gpZJdw/img-12.jpg" alt=""
+            /></span>
+          </div>
+        </div>
+        <!----------------- end gallery ----------------->
+        <span id="right" class="icon"
+          ><i class="fa-solid fa-circle-chevron-right"></i
+        ></span>
+      </div>
+      <!----------------- end container ----------------->
+    </main>
+    <script>
+      const galleryContainer = document.getElementById("gallery");
+      const leftBtn = document.getElementById("left");
+      const rightBtn = document.getElementById("right");
+
+      galleryContainer.addEventListener("wheel", (event) => {
+        galleryContainer.scrollLeft += 900;
+        galleryContainer.style.scrollBehavior = "smooth";
+      });
+
+      leftBtn.addEventListener("click", (event) => {
+        galleryContainer.scrollLeft += 900;
+        galleryContainer.style.scrollBehavior = "smooth";
+      });
+
+      rightBtn.addEventListener("click", (event) => {
+        galleryContainer.scrollLeft -= 900;
+        galleryContainer.style.scrollBehavior = "smooth";
+      });
+    </script>
+  </body>
+</html>
