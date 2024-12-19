@@ -15,10 +15,33 @@
     />
     <!----------------- cdn Font Awesome end ----------------->
 
-    <title>Slider</title>
+    <title>Slider-1</title>
   </head>
   <body>
     <main>
+      <nav class="navbar">
+        <a href="#">Home</a>
+        <ul class="menu">
+          <li class="dropdown">
+            <a href="#">Product</a>
+            <div class="dropdown-menu">
+              <a href="#">Mobile</a>
+              <a href="#">Laptop</a>
+              <a href="#">watch</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#">Services</a>
+            <div class="dropdown-menu">
+              <a href="#">Mobile Service</a>
+              <a href="#">Laptop Service</a>
+              <a href="#">watch Service</a>
+            </div>
+          </li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="toggle-menu" onclick="toggleMenu()">☰</div>
+      </nav>
       <div class="container">
         <span id="left" class="icon">
           <i class="fa-solid fa-circle-chevron-left"></i
@@ -56,22 +79,41 @@
       <!----------------- end container ----------------->
     </main>
     <script>
+      /* *************** start navbar *************** */
+      function toggleMenu() {
+        const menu = document.querySelector(".menu");
+        menu.classList.toggle("active");
+      }
+      /* *************** end navbar *************** */
+
       const galleryContainer = document.getElementById("gallery");
       const leftBtn = document.getElementById("left");
       const rightBtn = document.getElementById("right");
 
+      /* ***************  *************** */
+
+      function getScrollStep() {
+        if (window.innerWidth <= 768) return 600;
+        if (window.innerWidth <= 480) return 400;
+        return 900;
+      }
+      /* ***************  *************** */
+
       galleryContainer.addEventListener("wheel", (event) => {
-        galleryContainer.scrollLeft += 900;
         galleryContainer.style.scrollBehavior = "smooth";
+        galleryContainer.scrollLeft +=
+          event.deltaY > 0 ? getScrollStep() : -getScrollStep();
       });
+      /* ***************  *************** */
 
       leftBtn.addEventListener("click", (event) => {
-        galleryContainer.scrollLeft += 900;
+        galleryContainer.scrollLeft += getScrollStep();
         galleryContainer.style.scrollBehavior = "smooth";
       });
+      /* ***************  *************** */
 
       rightBtn.addEventListener("click", (event) => {
-        galleryContainer.scrollLeft -= 900;
+        galleryContainer.scrollLeft -= getScrollStep();
         galleryContainer.style.scrollBehavior = "smooth";
       });
     </script>
