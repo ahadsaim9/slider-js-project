@@ -44,6 +44,9 @@
           <i class="fa-solid fa-bars"></i>
         </div>
       </nav>
+
+      <hr class="" />
+
       <div class="container">
         <span id="left" class="icon">
           <i class="fa-solid fa-circle-chevron-left"></i
@@ -97,12 +100,13 @@
       function getScrollStep() {
         if (window.innerWidth <= 768) return 600;
         if (window.innerWidth <= 480) return 400;
-        return 900;
+        return 600;
       }
       /* ***************  *************** */
 
       galleryContainer.addEventListener("wheel", (event) => {
         galleryContainer.style.scrollBehavior = "smooth";
+        galleryContainer.style.scroll_span_stop = "100px";
         galleryContainer.scrollLeft +=
           event.deltaY > 0 ? getScrollStep() : -getScrollStep();
       });

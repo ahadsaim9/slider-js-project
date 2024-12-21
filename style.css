@@ -80,7 +80,7 @@ body {
 }
 
 .gallery {
-  width: 900px;
+  width: 600px;
   height: 600px;
   display: flex;
   overflow-y: scroll;
@@ -92,7 +92,7 @@ body {
   display: flex;
 }
 .gallery div img {
-  width: 900px;
+  width: 600px;
   height: 100%;
   filter: grayscale(50%);
   object-fit: cover;
@@ -103,10 +103,10 @@ body {
   transform: scale(1.1);
 }
 .icon {
-  font-size: 20px;
   transition: 0.5s;
   cursor: pointer;
   padding: 0 20px;
+  color: #0d605d;
 }
 .icon:hover {
   font-weight: bold;
@@ -158,12 +158,12 @@ body {
   /* *************** end navbar *************** */
 
   .gallery {
-    width: 400px;
+    width: 300px;
     height: 300px;
   }
 
   .gallery div img {
-    width: 400px;
+    width: 300px;
     height: 100%;
   }
 }
@@ -178,5 +178,11 @@ body {
 
   .gallery div img {
     width: 200px;
+  }
+  .icon {
+    padding: 0;
+  }
+  .icon i {
+    font-size: 25px;
   }
 }
